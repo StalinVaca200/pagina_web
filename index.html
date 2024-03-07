@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio</title>
+<!-- Favicon -->
+<link href="img/LOGO3.PNG" rel="icon">
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+ <!-- Libraries Stylesheet -->
+<link href="lib/animate/animate.min.css" rel="stylesheet">
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<!-- Customized Bootstrap Stylesheet -->
+<link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="css/whatsapp.css">
+<link rel="stylesheet" href="login/styles.css">
+<link rel="stylesheet" href="car/diseñoscar.css">
+</head>
+<body>
+
+<!-- Inicio de la barra superior -->
+<header>
+    <div class="container-fluid">
+        <div class="row align-items-center justify-content-center bg-light py-2 px-xl-5 d-none d-lg-flex"> 
+            <div class="col-lg-6 mx-auto"> 
+                <a href="index.html" class="text-decoration-none d-inline-block">
+                    <div class="d-flex align-items-center justify-content-center"> 
+                        <img src="img/LOGO3.PNG" alt="Logo" class="mr-3" style="max-width: 125px;">
+                        <span class="h1 custom-dark-text text-uppercase" style="color: black;">IMPORTADORA </span>
+                        <span class="h1 custom-primary-text text-uppercase" style="color: red;">CELLTECH</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Fin de la barra superior -->
+    
+<!-- Inicio de la barra de navegación -->
+<div class="container-fluid bg-dark mb-30">
+    <div class="row px-xl-5">
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="btn d-flex align-items-center justify-content-between bg-primary w-100" id="category-toggle" style="height: 65px; padding: 0 30px;">
+                <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categorias</h6>
+                <i class="fa fa-angle-down text-dark"></i>
+            </div>
+            <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
+                <div class="navbar-nav w-100">
+                    <div class="nav-item dropdown dropright" id="menuHover">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Computadoras<i class="fa fa-angle-right float-right mt-1"></i></a>
+                        <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                            <a href="productos/laptops/laptops.html" class="dropdown-item">Laptops</a>
+                            <a href="productos/All_in_One/all.html" class="dropdown-item">All in One</a>
+                            <a href="productos/Escritorio/computadoras_escritorio.html" class="dropdown-item">Escritorio</a>
+                        </div>
+                    </div>
+                    <a href="productos/Celulares/celulares.html" class="nav-item nav-link">Celulares</a>
+                    <a href="productos/Cargadores/cargadores.html" class="nav-item nav-link">Cargadores</a>
+                    <a href="productos/cables_usb/cables_usb.html" class="nav-item nav-link">Cables USB</a>
+                    <a href="productos/Audifonos/audifonos.html" class="nav-item nav-link">Audifonos</a>
+                    <a href="productos/Routers_y_Repetidores/routers.html" class="nav-item nav-link">Routers y Repetidores</a>
+                    <a href="productos/Mause/mause.html" class="nav-item nav-link">Mause</a>
+                    <a href="productos/Teclados/teclado.html" class="nav-item nav-link">Teclados</a>
+                    <a href="productos/Software/software.html" class="nav-item nav-link">Software</a>
+                    <a href="productos/Hardware/hardware.html" class="nav-item nav-link">Hardware</a>
+                </div>
+            </nav>
+        </div>
+        <div class="col-lg-9">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active">Inicio</a>
+                        <a href="nuentras_tiendas/nuestras_tiendas.html" class="nav-item nav-link">Nuestras Tiendas</a>
+                        <a href="contacto/contact.html" class="nav-item nav-link">Contactenos</a>
+                    </div>
+
+                    <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
+                        <a href="#" id="openCartModal" class="btn px-0 ml-0">
+                            <i class="fas fa-shopping-cart text-primary"></i>
+                            <span id="cartCounter" class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                        </a>
+                    </div>
+                    
+                    <div class="navbar-nav py-0">
+                        <a href="#" id="loginLink" class="nav-item nav-link">
+                            <i class="fas fa-user"></i> Mi cuenta
+                        </a>
+                    </div>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- Fin de la barra de navegación -->
+
+
+
+<!-- Ventana modal del carrito -->
+<div id="cartModal" class="modal right" tabindex="-1" role="dialog">
+    <!-- Contenido del carrito -->
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- Encabezado del carrito -->
+            <div class="modal-header">
+                <h5 class="modal-title">Carrito de Compras</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Lista de productos del carrito -->
+            <div class="modal-body">
+                <ul id="cartItems">
+                    <!-- Aquí se mostrarán los productos seleccionados -->
+                </ul>
+            </div>
+            <!-- Pie de la ventana modal -->
+            <!-- Enlace para ver el carrito -->
+            <div class="text-center mt-3">
+                <a href="car/cart.html" id="viewCartButton" class="btn btn-primary mr-2">Ver Carrito</a>
+                <a href="checker_pago/checkout.html" id="proceedToCheckoutButton" class="btn btn-primary">Proceder al Pago</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<!-- Ventana modal para el inicio de sesión -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Aquí colocamos el logo en lugar del título "Inicio de Sesión" -->
+        <a href="index.html" class="text-decoration-none d-inline-block">
+            <div class="d-flex align-items-center justify-content-center"> 
+                <img src="img/LOGO3.PNG" alt="Logo" class="mr-1" style="max-width: 125px;">
+                <span class="h3 custom-dark-text text-uppercase" style="color: black;">IMPORTADORA </span>
+                <span class="h3 custom-primary-text text-uppercase" style="color: red;">CELLTECH</span>
+            </div>
+        </a>
+        <!-- Fin del logo -->
+        <!-- Formulario de inicio de sesión -->
+        <form action="login.php" method="post">
+            <label for="username">Usuario:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Contraseña:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+        <!-- Enlaces para registro y recuperación de contraseña -->
+        <div class="navbar-nav d-flex flex-row justify-content-center py-0">
+            <a href="#" id="registroLink" class="nav-item nav-link mr-3">
+                Registrarse
+            </a>
+            <a href="#" id="recuperarContraseñaLink" class="nav-item nav-link">
+                ¿Olvidaste la contraseña?
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Ventana modal para el formulario de registro -->
+<div id="registroModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Formulario de registro -->
+        <form action="login/registro.php" method="post">
+            <label for="nombre">Nombres:</label><br>
+            <input type="text" id="nombre" name="nombre"><br>
+            <label for="email">Correo electrónico:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="password_reg">Contraseña:</label><br>
+            <input type="password" id="password_reg" name="password_reg"><br><br>
+            <input type="submit" value="Registrarse">
+        </form>
+    </div>
+</div>
+
+<!-- Ventana modal para el formulario de recuperación de contraseña -->
+<div id="recuperarContraseñaModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Formulario de recuperación de contraseña -->
+        <form action="login/recuperar_contraseña.php" method="post">
+            <label for="email_rec">Correo electrónico:</label><br>
+            <input type="email" id="email_rec" name="email_rec"><br><br>
+            <input type="submit" value="Recuperar Contraseña">
+        </form>
+    </div>
+</div>
+
+
+
+<!-- Inicio del carrusel -->
+<div class="container-fluid mb-20">
+    <div class="row px-xl-6">
+        <div class="col-lg-12">
+            <div id="header-carousel" class="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#header-carousel" data-slide-to="1"></li>
+                    <li data-target="#header-carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item position-relative active" style="height: 430px;">
+                        <img class="position-absolute w-100 h-100" src="img/banner/banner1.PNG" style="object-fit: cover;">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 700px;">
+                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Case infinytek</h1>
+                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Desata todo el potencial de tu experiencia de juego con nuestra última oferta!</p>
+                                <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Compra Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item position-relative" style="height: 430px;">
+                        <img class="position-absolute w-100 h-100" src="img/banner/banner2.PNG" style="object-fit: cover;">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 700px;">
+                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Laptops y muccho más</h1>
+                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Descubre una gama excepcional de productos que transformarán tu experiencia tecnológica. </p>
+                                <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Compra Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item position-relative" style="height: 430px;">
+                        <img class="position-absolute w-100 h-100" src="img/banner/banner3.PNG" style="object-fit: cover;">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 700px;">
+                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Proyectores Epson</h1>
+                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Experimenta la excelencia visual con los proyectores Epson. Claridad, brillo y calidad en cada imagen. Descubre una nueva dimensión en entretenimiento y presentaciones</p>
+                                <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Compra Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin del carrusel -->
+
+
+<!-- Inicio de destacados -->
+<div class="container-fluid pt-4">
+    <div class="row px-xl-1 pb-2">
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">Producto de Calidad</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
+                <h5 class="font-weight-semi-bold m-0">Envío Gratuito</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">Devolución en 14 Días</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">Soporte 24/7</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin de destacados -->
+
+
+<!-- Inicio de categorías -->
+<div class="container-fluid pt-1">
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">CATEGORÍAS</span></h2>
+    <div class="row px-xl-5 pb-2">
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="productos/laptops/laptops.html">
+                <div class="cat-item d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="img/categorias/laptops.png" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Laptops</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="productos/All_in_One/all.html">
+                <div class="cat-item d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="img/categorias/all_in_one" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>All in One</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="productos/celulares/celulares.html">
+                <div class="cat-item d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="img/categorias/celulares.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Celulares</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <a class="text-decoration-none" href="productos/Tablets/tablet.html">
+                <div class="cat-item d-flex align-items-center mb-4">
+                    <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                        <img class="img-fluid" src="img/categorias/tablets.jpg" alt="">
+                    </div>
+                    <div class="flex-fill pl-3">
+                        <h6>Tablets</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row px-xl-5 pb-2">
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/monitores/monitores.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/monitor.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Monitores</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/Escritorio/computadoras_escritorio.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/pc_escritorio.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>PC Escritorio</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/impresoras/impresoras.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/impresoras.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Impresoras</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/proyectores/proyectores.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/proyectores.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Proyectores</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="row px-xl-5 pb-2">
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/monitores/monitores.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/redes.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Redes</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/Escritorio/computadoras_escritorio.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/procesador.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Procesadores</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/impresoras/impresoras.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/memorias_ram.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Memorias Ram</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/proyectores/proyectores.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/ssd.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Disco Solidos</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="row px-xl-5 pb-2">
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/monitores/monitores.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/sillas_gamer.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Sillas</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/Escritorio/computadoras_escritorio.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/audifonos.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Audifonos</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/impresoras/impresoras.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/earbuds.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Earbuds</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/proyectores/proyectores.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/tecaldos.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Teclado</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="row px-xl-5 pb-2">
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/monitores/monitores.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/mause.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Mause</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/Escritorio/computadoras_escritorio.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/cables_usb.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Cables USB</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/impresoras/impresoras.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/cargadores.jpg" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Cargadores</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <a class="text-decoration-none" href="productos/proyectores/proyectores.html">
+            <div class="cat-item d-flex align-items-center mb-4">
+                <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                    <img class="img-fluid" src="img/categorias/sotfware.png" alt="">
+                </div>
+                <div class="flex-fill pl-3">
+                    <h6>Hardware y Software</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<!-- Categorías Finalizadas -->
+
+<!-- Productos Comienzan -->
+<div class="container-fluid pt-10 pb-7">
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">PRODUCTOS DESTACADOS</span></h2>
+    <div class="row px-xl-5">
+        <div class="col-lg-3 col-md-5 col-sm-5 pb-1">
+            <div class="product-item bg-light mb-1">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="img/destacdos/spark20pro.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square btn-add-to-cart" href="#" data-product-id="1"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Tecno Spark 20 Pro (8+256GB)</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$195.00</h5><h6 class="text-muted ml-2"><del>$210.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="img/destacdos/zero30.jpg" alt="">
+                    <div class="product-action">
+                    <a class="btn btn-outline-dark btn-square btn-add-to-cart" href="#" data-product-id="2"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Infinix Zero 30 (8+256GB)</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$279.00</h5><h6 class="text-muted ml-2"><del>$285.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-3">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="img/destacdos/note30 pro.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square btn-add-to-cart" href="#" data-product-id="3"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">Infinix Note 30 Pro(8+256GB)</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$235.00</h5><h6 class="text-muted ml-2"><del>$259.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-4">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="img/destacdos/go2024.png" alt="">
+                    <div class="product-action">
+                    <a class="btn btn-outline-dark btn-square btn-add-to-cart" href="#" data-product-id="4"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href=""> Tecno Spark GO 2024 (8+256GB)</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$115.00</h5><h6 class="text-muted ml-2"><del>$125.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<!-- Productos Finalizados -->
+
+
+<!-- Oferta Comienza -->
+<div class="container-fluid pt-5 pb-3">
+    <div class="row px-xl-5">
+        <div class="col-md-6">
+            <div class="product-offer mb-30" style="height: 300px;">
+                <img class="img-fluid" src="img/descuentos/laptops.jpg" alt="">
+                <div class="offer-text">
+                    <h6 class="text-white text-uppercase">Ahorra 20%</h6>
+                    <h3 class="text-white mb-3">Oferta Especial</h3>
+                    <a href="" class="btn btn-primary">Compra Ahora</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="product-offer mb-30" style="height: 300px;">
+                <img class="img-fluid" src="img/descuentos/cpus.jpg" alt="">
+                <div class="offer-text">
+                    <h6 class="text-white text-uppercase">Ahorra 20%</h6>
+                    <h3 class="text-white mb-3">Oferta Especial</h3>
+                    <a href="" class="btn btn-primary">Compra Ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Oferta Finalizada -->
+
+<!-- Productos Comienzan -->
+<div class="container-fluid pt-10 pb-7">
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">PRODUCTOS RECIENTES</span></h2>
+    <div class="row px-xl-5">
+        <div class="col-lg-3 col-md-5 col-sm-5 pb-5">
+            <div class="product-item bg-light mb-2">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="img/Productos_Recientes/cable.jpg" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square btn-add-to-cart" href="#" data-product-id="1"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">CABLE LDNIO LS611 TIPO-C 25W</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$4.00</h5><h6 class="text-muted ml-2"><del>$5.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="img/Productos_Recientes/CARGADOR-18W-1.jpg" alt="">
+                    <div class="product-action">
+                    <a class="btn btn-outline-dark btn-square btn-add-to-cart" href="#" data-product-id="1"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">CARGADOR LDNIO A1204Q TIPO C</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$10.00</h5><h6 class="text-muted ml-2"><del>$12.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="img/Productos_Recientes/SPARK20C.jpg" alt="">
+                    <div class="product-action">
+                    <a class="btn btn-outline-dark btn-square btn-add-to-cart" href="#" data-product-id="1"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href="">SPARK 20C (4+256GB)</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$140.00</h5><h6 class="text-muted ml-2"><del>$150.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="img/Productos_Recientes/SAMSUNG.jpg" alt="">
+                    <div class="product-action">
+                    <a class="btn btn-outline-dark btn-square btn-add-to-cart" href="#" data-product-id="1"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href=""> Samsung A05 (4+128GB)</a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5>$145.00</h5><h6 class="text-muted ml-2"><del>$165.00</del></h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Productos Finalizados -->
+
+
+<!-- Proveedor Comienza -->
+<div class="container-fluid py-5">
+    <div class="row px-xl-5">
+        <div class="col">
+            <div class="owl-carousel vendor-carousel">
+                <div class="bg-light p-3">
+                    <img class="img-fluid" src="img/marcas/Epson_logo.svg.png" alt="">
+                </div>
+                <div class="bg-light p-3">
+                    <img class="img-fluid" src="img/marcas/Hikvision_logo.svg.png" alt="">
+                </div>
+                <div class="bg-light p-3">
+                    <img class="img-fluid" src="img/marcas/infinix.jpg" alt="">
+                </div>
+                <div class="bg-light p-3">
+                    <img class="img-fluid" src="img/marcas/ldnio.png" alt="">
+                </div>
+                <div class="bg-light p-3">
+                    <img class="img-fluid" src="img/marcas/Samsung.png" alt="">
+                </div>
+                <div class="bg-light p-3">
+                    <img class="img-fluid" src="img/marcas/ASUS.png" alt="">
+                </div>
+                <div class="bg-light p-3">
+                    <img class="img-fluid" src="img/marcas/HP.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Proveedor Fin -->
+
+<!-- Botón de WhatsApp Flotante -->
+ <div class="whatsapp-button" id="whatsappButton">
+    <a href="https://wa.me/message/SZS7L5SP35MYL1" target="_blank">
+      <img src="img/whatsapp-icon-removebg-preview.png" alt="WhatsApp">
+    </a>
+</div>
+
+<!-- Inicio del pie de página -->
+<footer>
+    <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <h5 class="text-secondary text-uppercase mb-4">Ponte en contacto</h5>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>San luis de pambil, frente a las canchas centrales en el hotel pambileño</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>importadora.celtech@gmail.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>0978703640</p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">Menú</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+                            <a class="text-secondary mb-2" href="nuentras_tiendas/nuestras_tiendas.html"><i class="fa fa-angle-right mr-2"></i>Nuestras Tiendas</a>
+                            <a class="text-secondary" href="contacto/contact.html"><i class="fa fa-angle-right mr-2"></i>Contacto</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">Terminos y Condiciones</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="Terminos_y_Condiciones/Políticas_Garantía/Políticas_Garantía.html"><i class="fa fa-angle-right mr-2"></i>Políticas de Garantía</a>
+                            <a class="text-secondary mb-2" href="Terminos_y_Condiciones/Políticas_Envio/Políticas_Envio.html"><i class="fa fa-angle-right mr-2"></i>Políticas de Envio</a>
+                            <a class="text-secondary mb-2" href="Terminos_y_Condiciones/Políticas_privacidad/Políticas_privacidad.html"><i class="fa fa-angle-right mr-2"></i>Políticas de Privacidad</a>
+                            <a class="text-secondary mb-2" href="Terminos_y_Condiciones/forma_pago/froma_de_pago.html"><i class="fa fa-angle-right mr-2"></i>Formas de Pago</a>
+                            <a class="text-secondary" href="Terminos_y_Condiciones/preguntas_frecuentes/preguntas_frecuetes.html"><i class="fa fa-angle-right mr-2"></i>Pregutas Frecuentes</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">Boletín de Noticias</h5>
+                        <p>Obtén toda la información más reciente sobre eventos, ventas y ofertas.</p>
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary">Suscribete</button>
+                                </div>
+                            </div>
+                        </form>
+                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Síguenos</h6>
+                        <div class="d-flex">
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="https://www.facebook.com/profile.php?id=61556770175892"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-secondary">
+                    &copy; <a class="text-primary" href="#">Dominio</a>. Todos los Derechos Reservados. Diseñado
+                    por
+                    <a class="text-primary" href="https://htmlcodex.com">HTML Codex</a>
+                    <br>Distribuido Por: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                </p>
+            </div>
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+                <img class="img-fluid" src="img/payments.png" alt="">
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<!-- Contact Javascript File -->
+<script src="mail/jqBootstrapValidation.min.js"></script>
+<script src="mail/contact.js"></script>
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+<!-- Importar Font Awesome -->
+<script src="script.js"></script>
+<!-- Script JavaScript -->
+<script src="menu_desplegable/menu.js"></script> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script src="car/logista_cart.js"></script>
+<script src="js/cartProducts.js"></script>
+<script src="js/cartProducts.js"></script>
+<script src="login/script.js"></script>
+<script src="car/diseños.modal.js"></script>
+</body>
+</html>
