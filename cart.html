@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>MultiShop - Online Shop Website Template</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Free HTML Templates" name="keywords">
+<meta content="Free HTML Templates" name="description">
+<!-- Favicon -->
+<link href="../img/favicon.ico" rel="icon">
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<!-- Libraries Stylesheet -->
+<link href="../lib/animate/animate.min.css" rel="stylesheet">
+<link href="../owlcarousel/owl.carousel.min.js" rel="stylesheet">
+<!-- Customized Bootstrap Stylesheet -->
+<link href="../css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/whatsapp.css">
+<link rel="stylesheet" href="../login/styles.css">
+<link rel="stylesheet" href="../car/diseñoscar.css">
+</head>
+<body>
+<style>
+    .hidden {
+    display: none;
+}
+
+</style>
+<!-- Inicio de la barra superior -->
+<header>
+    <div class="container-fluid">
+        <div class="row align-items-center justify-content-center bg-light py-2 px-xl-5 d-none d-lg-flex"> 
+            <div class="col-lg-6 mx-auto"> 
+                <a href="../index.html" class="text-decoration-none d-inline-block">
+                    <div class="d-flex align-items-center justify-content-center"> 
+                        <img src="../img/LOGO3.PNG" alt="Logo" class="mr-3" style="max-width: 125px;">
+                        <span class="h1 custom-dark-text text-uppercase" style="color: black;">IMPORTADORA </span>
+                        <span class="h1 custom-primary-text text-uppercase" style="color: red;">CELLTECH</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Fin de la barra superior -->
+
+<!-- Inicio de la barra de navegación -->
+<div class="container-fluid bg-dark mb-30">
+    <div class="row px-xl-5">
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="btn d-flex align-items-center justify-content-between bg-primary w-100" id="category-toggle" style="height: 65px; padding: 0 30px;">
+                <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categorias</h6>
+                <i class="fa fa-angle-down text-dark"></i>
+            </div>
+            <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
+                <div class="navbar-nav w-100">
+                    <div class="nav-item dropdown dropright" id="menuHover">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Computadoras<i class="fa fa-angle-right float-right mt-1"></i></a>
+                        <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                            <a href="../productos/laptops/laptops.html" class="dropdown-item">Laptops</a>
+                            <a href="../productos/All_in_One/all.html" class="dropdown-item">All in One</a>
+                            <a href="../productos/Escritorio/computadoras_escritorio.html" class="dropdown-item">Escritorio</a>
+                        </div>
+                    </div>
+                    <a href="../productos/Celulares/celulares.html" class="nav-item nav-link">Celulares</a>
+                    <a href="../productos/Cargadores/cargadores.html" class="nav-item nav-link">Cargadores</a>
+                    <a href="../productos/cables_usb/cables_usb.html" class="nav-item nav-link">Cables USB</a>
+                    <a href="../productos/Audifonos/audifonos.html" class="nav-item nav-link">Audifonos</a>
+                    <a href="../productos/Routers_y_Repetidores/routers.html" class="nav-item nav-link">Routers y Repetidores</a>
+                    <a href="../productos/Mause/mause.html" class="nav-item nav-link">Mause</a>
+                    <a href="../productos/Teclados/teclado.html" class="nav-item nav-link">Teclados</a>
+                    <a href="../productos/Software/software.html" class="nav-item nav-link">Software</a>
+                    <a href="../productos/Hardware/hardware.html" class="nav-item nav-link">Hardware</a>
+                </div>
+            </nav>
+        </div>
+        <div class="col-lg-9">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto py-0">
+                        <a href="../index.html" class="nav-item nav-link active">Inicio</a>
+                        <a href="../nuentras_tiendas/nuestras_tiendas.html" class="nav-item nav-link">Nuestras Tiendas</a>
+                        <a href="../contacto/contact.html" class="nav-item nav-link">Contactenos</a>
+                    </div>
+
+                    <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
+                        <a href="#" id="openCartModal" class="btn px-0 ml-0">
+                            <i class="fas fa-shopping-cart text-primary"></i>
+                            <span id="cartCounter" class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                        </a>
+                    </div>
+                    
+                    <div class="navbar-nav py-0">
+                        <a href="#" id="loginLink" class="nav-item nav-link">
+                            <i class="fas fa-user"></i> Mi cuenta
+                        </a>
+                    </div>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- Fin de la barra de navegación -->
+
+
+
+<!-- Ventana modal del carrito -->
+<div id="cartModal" class="modal right" tabindex="-1" role="dialog">
+    <!-- Contenido del carrito -->
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- Encabezado del carrito -->
+            <div class="modal-header">
+                <h5 class="modal-title">Carrito de Compras</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Lista de productos del carrito -->
+            <div class="modal-body">
+                <ul id="cartItems">
+                    <!-- Aquí se mostrarán los productos seleccionados -->
+                </ul>
+            </div>
+            <!-- Pie de la ventana modal -->
+            <!-- Enlace para ver el carrito -->
+            <div class="text-center mt-3">
+                <a href="../car/cart.html" id="viewCartButton" class="btn btn-primary mr-2">Ver Carrito</a>
+                <a href="../checker_pago/checkout.html" id="proceedToCheckoutButton" class="btn btn-primary">Proceder al Pago</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<!-- Ventana modal para el inicio de sesión -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Aquí colocamos el logo en lugar del título "Inicio de Sesión" -->
+        <a href="../index.html" class="text-decoration-none d-inline-block">
+            <div class="d-flex align-items-center justify-content-center"> 
+                <img src="../img/LOGO3.PNG" alt="Logo" class="mr-1" style="max-width: 125px;">
+                <span class="h3 custom-dark-text text-uppercase" style="color: black;">IMPORTADORA </span>
+                <span class="h3 custom-primary-text text-uppercase" style="color: red;">CELLTECH</span>
+            </div>
+        </a>
+        <!-- Fin del logo -->
+        <!-- Formulario de inicio de sesión -->
+        <form action="../login.php" method="post">
+            <label for="username">Usuario:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Contraseña:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+        <!-- Enlaces para registro y recuperación de contraseña -->
+        <div class="navbar-nav d-flex flex-row justify-content-center py-0">
+            <a href="#" id="registroLink" class="nav-item nav-link mr-3">
+                Registrarse
+            </a>
+            <a href="#" id="recuperarContraseñaLink" class="nav-item nav-link">
+                ¿Olvidaste la contraseña?
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Ventana modal para el formulario de registro -->
+<div id="registroModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Formulario de registro -->
+        <form action="../login/registro.php" method="post">
+            <label for="nombre">Nombres:</label><br>
+            <input type="text" id="nombre" name="nombre"><br>
+            <label for="email">Correo electrónico:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="password_reg">Contraseña:</label><br>
+            <input type="password" id="password_reg" name="password_reg"><br><br>
+            <input type="submit" value="Registrarse">
+        </form>
+    </div>
+</div>
+
+<!-- Ventana modal para el formulario de recuperación de contraseña -->
+<div id="recuperarContraseñaModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Formulario de recuperación de contraseña -->
+        <form action="../login/recuperar_contraseña.php" method="post">
+            <label for="email_rec">Correo electrónico:</label><br>
+            <input type="email" id="email_rec" name="email_rec"><br><br>
+            <input type="submit" value="Recuperar Contraseña">
+        </form>
+    </div>
+</div>
+
+
+<!-- Migas de pan (Breadcrumb) Comienzo -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="../index.html">Inicio</a>
+                <a class="breadcrumb-item text-dark" href="../tienda/shop.html">Tienda</a>
+                <span class="breadcrumb-item active">Carrito de Compras</span>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Migas de pan (Breadcrumb) Fin -->
+
+
+<!-- Carrito Comienzo -->
+<div class="container-fluid carrito hidden">
+    <div class="row px-xl-5">
+        <div class="col-lg-8 table-responsive mb-5">
+            <table class="table table-light table-borderless table-hover text-center mb-0">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Productos</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody class="align-middle">
+                    <!-- Contenido de las filas de la tabla -->
+                    <tr class="product-row">
+                        <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;"> Nombre del Producto</td>
+                        <td class="align-middle">$150</td>
+                        <td class="align-middle">
+                            <div class="input-group quantity mx-auto" style="width: 100px;">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-sm btn-primary btn-minus">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center quantity-input" value="1">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-sm btn-primary btn-plus">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">$150</td>
+                        <td class="align-middle"><button class="btn btn-sm btn-danger btn-remove"><i class="fa fa-times"></i></button></td>
+                    </tr>
+                    <!-- Otras filas de productos -->
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-4">
+            <form class="mb-30" action="">
+                <!-- Formulario para aplicar cupón -->
+                <div class="input-group">
+                    <input type="text" class="form-control border-0 p-4" placeholder="Código de Cupón" id="couponCode">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" id="applyCoupon">Aplicar Cupón</button>
+                    </div>
+                </div>
+            </form>
+            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Resumen del Carrito</span></h5>
+            <!-- Resumen del carrito -->
+            <div class="bg-light p-30 mb-5" id="cartSummary">
+                <!-- Detalles del subtotal y envío -->
+                <div class="border-bottom pb-2">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h6>Subtotal</h6>
+                        <h6 id="subtotal"></h6>
+                    </div>
+                    <div class="d-flex justify-content-between" id="envioSection">
+                        <h6 class="font-weight-medium">Envío</h6>
+                        <h6 class="font-weight-medium" id="envio">$6.00</h6>
+                    </div>
+                </div>
+                <!-- Total y botón de proceder al pago -->
+                <div class="pt-2">
+                    <div class="d-flex justify-content-between mt-2">
+                        <h5>Total</h5>
+                        <h5 id="total"></h5>
+                    </div>
+                    <a href="../checker_pago/checkout.html"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Continuar al Pago</button></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Carrito Fin -->
+
+
+<!-- Botón de WhatsApp Flotante -->
+<div class="whatsapp-button" id="whatsappButton">
+    <a href="https://wa.me/message/SZS7L5SP35MYL1" target="_blank">
+      <img src="../img/whatsapp-icon-removebg-preview.png" alt="WhatsApp">
+    </a>
+</div>
+
+<!-- Inicio del pie de página -->
+<footer>
+    <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <h5 class="text-secondary text-uppercase mb-4">Ponte en contacto</h5>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>San luis de pambil, frente a las canchas centrales en el hotel pambileño</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>importadora.celtech@gmail.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>0978703640</p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">Menú</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="../index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+                            <a class="text-secondary mb-2" href="../nuentras_tiendas/nuestras_tiendas.html"><i class="fa fa-angle-right mr-2"></i>Nuestras Tiendas</a>
+                            <a class="text-secondary" href="../contacto/contact.html"><i class="fa fa-angle-right mr-2"></i>Contacto</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">Terminos y Condiciones</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="../Terminos_y_Condiciones/Políticas_Garantía/Políticas_Garantía.html"><i class="fa fa-angle-right mr-2"></i>Políticas de Garantía</a>
+                            <a class="text-secondary mb-2" href="../Terminos_y_Condiciones/Políticas_Envio/Políticas_Envio.html"><i class="fa fa-angle-right mr-2"></i>Políticas de Envio</a>
+                            <a class="text-secondary mb-2" href="../Terminos_y_Condiciones/Políticas_privacidad/Políticas_privacidad.html"><i class="fa fa-angle-right mr-2"></i>Políticas de Privacidad</a>
+                            <a class="text-secondary mb-2" href="../Terminos_y_Condiciones/forma_pago/froma_de_pago.html"><i class="fa fa-angle-right mr-2"></i>Formas de Pago</a>
+                            <a class="text-secondary" href="../Terminos_y_Condiciones/preguntas_frecuentes/preguntas_frecuetes.html"><i class="fa fa-angle-right mr-2"></i>Pregutas Frecuentes</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">Boletín de Noticias</h5>
+                        <p>Obtén toda la información más reciente sobre eventos, ventas y ofertas.</p>
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="stalinvacazambrano123@gmail.com">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary">Suscribete</button>
+                                </div>
+                            </div>
+                        </form>
+                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Síguenos</h6>
+                        <div class="d-flex">
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="https://www.facebook.com/profile.php?id=61556770175892"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-secondary">
+                    &copy; <a class="text-primary" href="#">Dominio</a>. Todos los Derechos Reservados. Diseñado
+                    por
+                    <a class="text-primary" href="https://htmlcodex.com">HTML Codex</a>
+                    <br>Distribuido Por: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                </p>
+            </div>
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+                <img class="img-fluid" src="../img/payments.png" alt="">
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="../lib/easing/easing.min.js"></script>
+<script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+<!-- Contact Javascript File -->
+<script src="../mail/jqBootstrapValidation.min.js"></script>
+<script src="../mail/contact.js"></script>
+<!-- Template Javascript -->
+<script src="../js/main.js"></script>
+<!-- Importar Font Awesome -->
+<script src="../script.js"></script>
+<!-- Script JavaScript --> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../menu_desplegable/menu.js"></script>
+<script src="../car/logista_cart.js"></script>
+<script src="../js/cartProducts.js"></script>
+<script src="../login/script.js"></script>
+<script src="../car/diseños.modal.js"></script>
+</body>
+</html>
